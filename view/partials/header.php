@@ -10,10 +10,3 @@
     <link rel="stylesheet" type="text/css" href="css/style1.css">
 </head>
 <body>
-<nav class="navbar navbar-light" he  style="background-color: #EEEB2B">
-        <a href="index.php"><img id=logo1 src="../img/logo.png"></a>
-
-        <form class="form-inline my-2 my-lg-0">
-        
-        </form>
-  </nav>
