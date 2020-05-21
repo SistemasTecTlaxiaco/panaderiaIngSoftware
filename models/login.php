@@ -4,7 +4,9 @@
 
         public function getUser($username, $password){
             $sql = "SELECT * FROM cliente WHERE correo = '$username' AND contraseña ='$password'";
+
             $result = $this->connect()->query($sql);
+
             $numRows = $result->num_rows;
             if($numRows == 1){
                 return true;
@@ -16,7 +18,9 @@
         public function siExisteUser($email){
             $sql = "SELECT * FROM cliente WHERE correo = '$email'"; 
             $result = $this->connect()->query($sql);
-            if($result->num_rows== 1){
+
+            $numRows = $result->num_rows;
+            if($numRows == 1){
                 return true;
             }
 
