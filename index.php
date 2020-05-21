@@ -14,8 +14,10 @@ include 'controllers/control.php';
   <nav class="navbar navbar-light" he  style="background-color: #EEEB2B">
         <a href="index.php"><img id=logo1 src="img/logo.png"></a>
         <form class="form-inline my-2 my-lg-0">
-        <a href=""><H1>Crear Cuenta</H1></a>
+
         </form>
+        <button class="btn btn-outline-primary"  onclick="location.href='view/registroCliente.php'">Crear Cuenta </button>
+    
   </nav>
 <div class="modal-dialog text-center">
   <div class="col-sm-10">
@@ -33,7 +35,7 @@ include 'controllers/control.php';
           <div class="form-group">
             <input type="password" name="password" class="form-control" placeholder="Contraseña">
           </div>
-          <button id=btn name="submit" type="submit">Siguiente </button>
+          <button class="btn btn-primary" name="submit" type="submit">Siguiente </button>
           <br><br>
       </form>
     </div>
