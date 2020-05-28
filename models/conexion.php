@@ -6,10 +6,10 @@
         private $dbname;
 
         public function __construct(){
-            $this->servername = 'localhost';
-            $this->user = 'root';
-            $this->password = '';
-            $this->dbname = 'panaderia';
+            $this->servername = 'us-cdbr-east-06.cleardb.net';
+            $this->user = 'b9465cd869f344';
+            $this->password = 'f9a1128f';
+            $this->dbname = 'heroku_0fdf25b1a9c4364';
         }
 
         public function connect(){
@@ -19,3 +19,10 @@
 
 
     }
+    $ob=new Database;
+    if($ob->connect()){
+        echo "Conexion extablecida";
+    }else{
+        echo "Error en la conexion";
+    }
+?>
