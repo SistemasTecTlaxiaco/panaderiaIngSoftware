@@ -16,51 +16,51 @@ include 'partials/header.php'
                         <legend class=" header">Registro de Usuario</legend>
 
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input name="name" type="text" placeholder="Nombre" class="form-control">
+                                <label>Nombre:</label>
+                                <input name="name" type="text" placeholder="Emma" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input name="aPaterno" type="text" placeholder="Apellido Paterno" class="form-control">
+                                <label>Apellido paterno:</label>
+                                <input name="aPaterno" type="text" placeholder="Harris" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input name="aMaterno" type="text" placeholder="Apellido Materno" class="form-control">
+                                <label>Apellido materno:</label>
+                                <input name="aMaterno" type="text" placeholder="Scott" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                             <div class="col-md-8">
-                                <input  name="phone" type="tel" placeholder="Telefono" class="form-control">
+                                <label>Nùmero de telefono:</label>
+                                <input  name="phone" type="tel" placeholder="954 000 0000" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                             <div class="col-md-8">
-                                <input  name="email" type="email" placeholder="Correo Electronico" class="form-control">
+                                <label>Correo electronico:</label>
+                                <input  name="email" type="email" placeholder="ejemplo17@gmail.com" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                             <div class="col-md-8">
-                                <input  name="user" type="text" placeholder="Usuario" class="form-control">
+                                <label>Nombre de usuario:</label>
+                                <input  name="user" type="text" placeholder="Scott900" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                             <div class="col-md-8">
-                                <input  name="password" type="password" placeholder="Contraseña" class="form-control">
+                                <label>Contraseña:</label>
+                                <input  name="password" type="password" placeholder="********" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-1 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                             <div class="col-md-8">
-                                <input  name="passwordR" type="password" placeholder="Repetir la contraseña" class="form-control">
+                                <label>Escribir de nuevo la contraseña: </label>
+                                <input  name="passwordR" type="password" placeholder="********" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">

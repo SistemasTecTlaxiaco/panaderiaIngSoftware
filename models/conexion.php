@@ -19,10 +19,4 @@
 
 
     }
-    $ob=new Database;
-    if($ob->connect()){
-        echo "Conexion extablecida";
-    }else{
-        echo "Error en la conexion";
-    }
 ?>

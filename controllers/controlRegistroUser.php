@@ -22,19 +22,37 @@ if(isset($_POST['submit'])){
         echo '<div class="alert alert-danger"> Rellene todos los campos  </div>';
    }else
    { 
+      $datos=array($nombre,
+                   $aPaterno,
+                   $aMaterno,
+                   $telefono,
+                   $email,
+                   $user,
+                   $pass,
+                   $passR
+                );
+      $datos1=array($email);
        if($pass==$passR){
-        require '../models/login.php';
-        $siExisteUser = new User;
-       if($siExisteUser->siExisteUser($email))
+          require '../models/usuarioCrud.php';
+          $obj = new metodos;
+       if($obj->existeEmail($datos1))
        {
            echo '<div class="alert alert-danger"> El correo electronico ya Existe </div>';
-       }else{
-            if($siExisteUser->createUser($nombre,$aPaterno,$aMaterno,$telefono,$email,$user,$pass)){
+       }
+       else
+       {
+          $datos2=array($user);
+          if($obj->existeUser($datos2)){
+              echo '<div class="alert alert-danger"> El usuario ya existe </div>';
+            }else{
+                if($obj->insertarDatosUsuario($datos)){
                 header('Location: ../index.php');
                 echo '<div class="alert alert-success"> Se Guardo Exitosamente </div>';
             }else{
                 echo '<div class="alert alert-danger"> Ha fallado </div>';
             }
+            }
+          
        }
          } else{
             echo '<div class="alert alert-danger"> Las contraseñas no son iguales </div>';
