@@ -1,19 +1,20 @@
 <?php 
 
-    class User extends Database{
+    class User{
 
-        public function getUser($username, $password){
-            $sql = "SELECT * FROM cliente WHERE correo = '$username' AND contraseña ='$password'";
-
-            $result = $this->connect()->query($sql);
-
-            $numRows = $result->num_rows;
-            if($numRows == 1){
-                return true;
+        public function datosLogin($datos){
+            $sql="SELECT * FROM cliente WHERE correo='$datos[0]' AND clave='$datos[1]'";
+            $db=new Database;
+            $conn=$db->connect();
+            $result=mysqli_query($conn,$sql);
+            $row_cnt = mysqli_num_rows($result);
+            if($row_cnt>0){
+                 return true;
+            }else{
+                 return false;        
             }
+         }
 
-            return false;
-        }
 
         public function siExisteUser($email){
             $sql = "SELECT * FROM cliente WHERE correo = '$email'"; 
