@@ -4,7 +4,7 @@
         <a href="home.php"><img id=logo1 src="../img/logo.png"></a>
           <form class="form-inline my-2 my-lg-0">
         </form>
-        <button class="btn btn-outline-primary"  onclick="location.href='../index.php'">Salir</button>
+        <button class="btn btn-outline-primary"  onclick="location.href='./home.php'">Regresar atrás</button>
 </nav>
 
         <div class="row">
