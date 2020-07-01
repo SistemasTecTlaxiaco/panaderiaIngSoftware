@@ -11,9 +11,9 @@
   <div class="col-sm-16">
     <div class="modal-content">
       <br>  <br>
-      <button  onclick="location.href=''" class="btn btn-outline-light text-dark" ><img id="imgTamaño" src="../img/img01.png" class="img-responsive" alt="Responsive image">Productos</button>
+      <button  onclick="location.href='./error.php'" class="btn btn-outline-light text-dark" ><img id="imgTamaño" src="../img/img01.png" class="img-responsive" alt="Responsive image">Productos</button>
       <br>  <br>
-      <button onclick="location.href=''" class="btn btn-outline-light text-dark" ><img id="imgTamaño" src="../img/img02.png" class="img-responsive" alt="Responsive image">Pedido</button>
+      <button onclick="location.href='./error.php'" class="btn btn-outline-light text-dark" ><img id="imgTamaño" src="../img/img02.png" class="img-responsive" alt="Responsive image">Pedido</button>
       <br>  <br>
        <button onclick="location.href='./informacion.php'" class="btn btn-outline-light text-dark" ><img id="imgTamaño" src="../img/img03.png" class="img-responsive" alt="Responsive image">Acerca de Nosotros</button>
       <br>  <br>

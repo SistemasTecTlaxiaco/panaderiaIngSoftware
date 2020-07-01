@@ -34,6 +34,14 @@
 								values ('$datos[0]','$datos[1]','$datos[2]','$datos[3]','$datos[4]','$datos[5]','$datos[6]')";
 			return $result=mysqli_query($conn,$sql);
 		}
+        
+        public function mostrarDatos($sql){
+            $db=new Database;
+            $conn=$db->connect();
+            $result=mysqli_query($conn,$sql);
+           return mysqli_num_rows($result);
+           
+        }
 
 	}
 
