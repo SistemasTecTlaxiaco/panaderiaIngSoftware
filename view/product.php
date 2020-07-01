@@ -10,18 +10,33 @@
         <button class="btn btn-outline-primary"  onclick="location.href='./home.php'">Regresar atrás</button>
 </nav>
 
-</nav>
-<div class="modal-dialog text-center">
-  <div class="col-sm-16">
-    <div class="modal-content">
-      <br>  <br>
-      <button  onclick="location.href=''" class="btn btn-outline-light text-dark" ><img id="imgTamaño" src="../img/img01.png" class="img-responsive" alt="Responsive image">Productos</button>
-      <br>  <br>
-    </div>
-  
-  </div>
-
-</div>
+<table style="border-collapse: collapse;" border="1">
+		<tr>
+			<td>Nombre</td>
+			<td>Apellido</td>
+			<td>Actualizar</td>
+			<td>Eliminar</td>
+		</tr>
+		<?php 
+			$obj=new metodos();
+			$sql="SELECT id,nombre_producto,precio,descripcion,tamaño,imagen from productos";
+			$datos=$obj->mostrarDatos($sql);
+			foreach ($datos as $key) {
+		 ?>
+		<tr>
+			<td><?php echo $key['nombre_producto']; ?></td>
+			<td><?php echo $key['precio']; ?></td>
+			<td>
+				<a href="editar.php?id=<?php echo $key['id'] ?>">Editar</a>
+			</td>
+			<td>
+				<a href="procesos/eliminar.php?id=<?php echo $key['id'] ?>">Eliminar</a>
+			</td>
+		</tr>
+		<?php 
+		}
+		 ?>
+	</table>
 			
 
 <?php include 'partials/footer.php';?>

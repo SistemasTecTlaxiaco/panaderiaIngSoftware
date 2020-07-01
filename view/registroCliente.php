@@ -18,7 +18,7 @@ include 'partials/header.php'
                         <div class="form-group">
                             <div class="col-md-8">
                                 <label>Nombre:</label>
-                                <input name="name" type="text" placeholder="Emma" class="form-control">
+                                <input name="name" type="text"  placeholder="Emma" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
@@ -30,7 +30,7 @@ include 'partials/header.php'
                         <div class="form-group">
                             <div class="col-md-8">
                                 <label>Apellido materno:</label>
-                                <input name="aMaterno" type="text" placeholder="Scott" class="form-control">
+                                <input name="aMaterno" type="text"  placeholder="Scott" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">

@@ -30,7 +30,7 @@ include 'controllers/control.php';
       </div> 
       <form class="col-12" action="" method="POST">
           <div class="form-group">
-            <input type="text" name="username" class="form-control" placeholder="Correo Electrónico" require>
+            <input type="email" name="username"  class="form-control" placeholder="Correo Electrónico" require>
           </div>
           <div class="form-group">
             <input type="password" name="password" class="form-control" placeholder="Contraseña">
