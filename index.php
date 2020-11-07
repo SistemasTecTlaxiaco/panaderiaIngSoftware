@@ -24,6 +24,7 @@ include 'controllers/control.php';
     <div class="modal-content" id="der">
         <br>
         <br>
+        
       <div class="col-12">
         <img id="logo" src="img/ini.png">
         <h1> Beth-el </h1>
