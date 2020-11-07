@@ -23,8 +23,13 @@ include 'controllers/control.php';
   <div class="col-sm-10">
     <div class="modal-content" id="der">
         <br>
+<<<<<<< HEAD
         <br>
         
+=======
+        <br> 
+      <p> Inicio de sesion </p>
+>>>>>>> bcc1291f1aa1073e4cb05faa61bf88fda4d6e4f6
       <div class="col-12">
         <img id="logo" src="img/ini.png">
         <h1> Beth-el </h1>
