@@ -31,7 +31,7 @@
 			$db=new Database;
             $conn=$db->connect();
 			$sql="INSERT into cliente (nombre,ape_pater,ape_mater,telefono,correo,usuario,clave) 
-								values ('$datos[0]','$datos[1]','$datos[2]','$datos[3]','$datos[4]','$datos[5]','$datos[6]')";
+								values ('$datos[0]','$datos[1]','$datos[2]',null,'$datos[3]',null,'$datos[4]')";
 			return $result=mysqli_query($conn,$sql);
 		}
         
