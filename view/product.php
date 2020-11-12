@@ -9,11 +9,33 @@
         </form>
         <button class="btn btn-outline-primary"  onclick="location.href='./home.php'">Regresar atrás</button>
 </nav>
+<div class="modal fade" id="ventanaModal" tabindex="-1" role="dialog" aris-labelledby="tituloVentana" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+	<div class="modal-header">
+		<h5 id="tituloVentana">Imagen...</h5>
+		<button class="close" data-dismiss="modal" aria-label="Cerrar">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		<div class="alert alert-success">
+			<h6><strong>Tus datos se guardaron exitosamente. </strong></h6> 
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+		<button type="button" class="btn btn-success">Success</button>
+	</div>
+</div>
+</div>
+</div>
+
+
+
   	<div class='container'>
 		<div class="row">
 			<div class="col-lg-12">
-
-
 <br>
 <table  class="table table-sm">
 	<tr class="bg-warning">
@@ -41,8 +63,8 @@
 		<td><?php echo $mostrar['descripcion'] ?></td>
 		<td><?php echo $mostrar['tamano'] ?></td>
 		<td><?php echo "<img src='../img/imagen/".$mostrar['imagen']."' width='70' height='70'>" ?></td>
-		<td><button type="button" class="btn btn-success">Ver</button></td>
-		<td><button type="button" class="btn btn-warning">Agregar</button></td>
+		<td><button  class="btn btn-success" data-toggle="modal" data-target="#ventanaModal">Ver</button></td>
+		<td><button onclick="location.href='./error.php'" type="button" class="btn btn-warning">Agregar</button></td>
 
 	</tr>
 <?php 
@@ -54,5 +76,9 @@
 </div>
 </div>
 </div>			
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php include 'partials/footer.php';?>

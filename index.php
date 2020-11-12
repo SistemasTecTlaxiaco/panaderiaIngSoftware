@@ -46,5 +46,14 @@ include 'controllers/control.php';
 
 </div>
   </body>
+  <footer id="footer01"><! -- Datos Institucionales -->
+    <div class="modal-right text-right">
+       <small> Heroica Ciudad de Tlaxiaco, Oaxaca.</small><! -- Etiqueta small es para textos legales.  -->
+ <address>
+Telefono: 9531563919
+</address>
+    </div>
+
+  </footer>
   
 </html>

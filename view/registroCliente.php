@@ -7,6 +7,9 @@ include 'partials/header.php'
 <nav class="navbar navbar-light" he  style="background-color: #EEEB2B">
         <a href="../index.php"><img id=logo1 src="../img/logo.png"></a>
 </nav>
+
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">

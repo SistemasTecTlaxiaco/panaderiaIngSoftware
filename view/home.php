@@ -11,7 +11,7 @@
   <div class="col-sm-16">
     <div class="modal-content">
       <br>  <br>
-      <button  onclick="location.href='./error.php'" class="btn btn-outline-light text-dark" ><img id="imgTamaño" src="../img/img01.png" class="img-responsive" alt="Responsive image">Productos</button>
+      <button  onclick="location.href='./product.php'" class="btn btn-outline-light text-dark" ><img id="imgTamaño" src="../img/img01.png" class="img-responsive" alt="Responsive image">Productos</button>
       <br>  <br>
       <button onclick="location.href='./error.php'" class="btn btn-outline-light text-dark" ><img id="imgTamaño" src="../img/img02.png" class="img-responsive" alt="Responsive image">Pedido</button>
       <br>  <br>
