@@ -43,6 +43,15 @@
            
         }
 
+    public function verProductos(){
+         $db=new Database;
+         $conn=$db->connect();
+         $sql="SELECT * from productos";
+         $result=mysqli_query($conn,$sql);
+         return $result;
+
+    }
+
 	}
 
 

@@ -9,34 +9,50 @@
         </form>
         <button class="btn btn-outline-primary"  onclick="location.href='./home.php'">Regresar atrás</button>
 </nav>
+  	<div class='container'>
+		<div class="row">
+			<div class="col-lg-12">
 
-<table style="border-collapse: collapse;" border="1">
-		<tr>
-			<td>Nombre</td>
-			<td>Apellido</td>
-			<td>Actualizar</td>
-			<td>Eliminar</td>
-		</tr>
-		<?php 
-			$obj=new metodos();
-			$sql="SELECT id,nombre_producto,precio,descripcion,tamaño,imagen from productos";
-			$datos=$obj->mostrarDatos($sql);
-			foreach ($datos as $key) {
-		 ?>
-		<tr>
-			<td><?php echo $key['nombre_producto']; ?></td>
-			<td><?php echo $key['precio']; ?></td>
-			<td>
-				<a href="editar.php?id=<?php echo $key['id'] ?>">Editar</a>
-			</td>
-			<td>
-				<a href="procesos/eliminar.php?id=<?php echo $key['id'] ?>">Eliminar</a>
-			</td>
-		</tr>
-		<?php 
-		}
-		 ?>
-	</table>
-			
+
+<br>
+<table  class="table table-sm">
+	<tr class="bg-warning">
+		<td>Ide</td>
+		<td>Codigo</td>
+		<td>Nombre</td>
+		<td>Precio</td>
+		<td>Descripcion</td>
+		<td>Tamaño</td>
+		<td>Imagen</td>
+		<td>Ver</td>
+		<td>Agregar</td>
+	</tr>
+	<?php 
+		require_once "../models/usuarioCrud.php";
+		$produt=new metodos;
+		$result=$produt->verProductos();
+		while($mostrar=mysqli_fetch_array($result)){
+	 ?>
+	<tr>
+		<td><?php echo $mostrar['id'] ?></td>
+		<td><?php echo $mostrar['codigo'] ?></td>
+		<td><?php echo $mostrar['nombre_producto'] ?></td>
+		<td><?php echo '$ '.$mostrar['precio'] ?></td>
+		<td><?php echo $mostrar['descripcion'] ?></td>
+		<td><?php echo $mostrar['tamano'] ?></td>
+		<td><?php echo "<img src='../img/imagen/".$mostrar['imagen']."' width='70' height='70'>" ?></td>
+		<td><button type="button" class="btn btn-success">Ver</button></td>
+		<td><button type="button" class="btn btn-warning">Agregar</button></td>
+
+	</tr>
+<?php 
+}
+ ?>
+
+</table>
+
+</div>
+</div>
+</div>			
 
 <?php include 'partials/footer.php';?>
