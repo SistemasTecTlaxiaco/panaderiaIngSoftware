@@ -19,8 +19,8 @@
 		</button>
 	</div>
 	<div class="modal-body">
-		<div class="alert alert-success">
-			<h6><strong>Tus datos se guardaron exitosamente. </strong></h6> 
+		<div >
+			<img src="../img/verImagen.jpg" width='300' height='300'>
 		</div>
 	</div>
 	<div class="modal-footer">
