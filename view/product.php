@@ -63,7 +63,7 @@
 		<td><?php echo $mostrar['descripcion'] ?></td>
 		<td><?php echo $mostrar['tamano'] ?></td>
 		<td><?php echo "<img src='../img/imagen/".$mostrar['imagen']."' width='80' height='80'>" ?></td>
-		<td><button  class="btn btn-success" data-toggle="modal" data-target="#ventanaModal">Ver</button></td>
+		<td><button  class="btn btn-success" data-toggle="modal" data-target="#ventanaModal"><i class="material-icons" style="font-size:36px;color:black">camera_alt</i></button></td>
 		<td><button onclick="location.href='./error.php'" type="button" class="btn btn-warning"><i class="material-icons" style="font-size:36px;color:black">local_grocery_store</i></button></td>
 
 	</tr>
