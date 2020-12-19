@@ -1,4 +1,6 @@
 <?php 
+
+
 require_once "models/conexion.php";
 if(isset($_POST['submit'])){
     $username = $_POST['username'];
@@ -16,7 +18,7 @@ if(isset($_POST['submit'])){
         $user = new User;
         if($user->datosLogin($datos))
         {
-            header('Location:view/home.php');
+          header('Location:view/home.php');
         }else
         {
          echo '<div class="alert alert-danger">Usuario no existe</div>';

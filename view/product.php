@@ -1,4 +1,6 @@
  <?php 
+ session_start();
+
 	require_once "../models/conexion.php";
 	require_once "../models/usuarioCrud.php";
  ?>
@@ -37,35 +39,45 @@
 		<div class="row">
 			<div class="col-lg-12">
 <br>
-<table  class="table table-sm">
+<table  class="table table-sm" border=2px>
+
 	<tr class="bg-warning">
-		<td>Ide</td>
-		<td>Codigo</td>
-		<td>Nombre</td>
-		<td>Precio</td>
-		<td>Descripcion</td>
-		<td>Tamaño</td>
-		<td>Imagen</td>
-		<td>Ver</td>
-		<td>Agregar</td>
+		<td align="center">Ide</td>
+		<td  align="center">Codigo</td>
+		<td align="center">Nombre</td>
+		<td  align="center">Caracteristicas</td>
+		<td  align="center">Imagen</td>
+		<td  align="center">Carrito</td>
 	</tr>
+
 	<?php 
 		require_once "../models/usuarioCrud.php";
 		$produt=new metodos;
 		$result=$produt->verProductos();
 		while($mostrar=mysqli_fetch_array($result)){
 	 ?>
-	<tr>
-		<td><?php echo $mostrar['id'] ?></td>
-		<td><?php echo $mostrar['codigo'] ?></td>
-		<td><?php echo $mostrar['nombre_producto'] ?></td>
-		<td><?php echo '$ '.$mostrar['precio'] ?></td>
-		<td><?php echo $mostrar['descripcion'] ?></td>
-		<td><?php echo $mostrar['tamano'] ?></td>
-		<td><?php echo "<img src='../img/imagen/".$mostrar['imagen']."' width='80' height='80'>" ?></td>
-		<td><button  class="btn btn-success" data-toggle="modal" data-target="#ventanaModal"><i class="material-icons" style="font-size:36px;color:black">camera_alt</i></button></td>
-		<td><button onclick="location.href='./error.php'" type="button" class="btn btn-warning"><i class="material-icons" style="font-size:36px;color:black">local_grocery_store</i></button></td>
 
+	<tr>
+		<td align="center"><?php echo $mostrar['id'] ?></td>
+		<td align="center"><?php echo $mostrar['codigo'] ?></td>
+		<td align="center"><?php echo $mostrar['nombre_producto'] ?></td>
+		<td><?php echo 'Precio: $ '.$mostrar['precio']."<br>Descripcion: ".$mostrar['descripcion']."<br>Tamaño: ".$mostrar['tamano'] ?></td>
+		<td align="center"><?php echo "<img src='../img/imagen/".$mostrar['imagen']."' width='100' height='100'>" ?></td>
+
+		<td align="center">
+			<form action="" method="POST">
+				<input type="hidden" name="txtimg" value="<?php echo $mostrar['imagen'] ?>">
+				<input type="hidden" name="txtproducto" value="<?php echo $mostrar['nombre_producto'] ?>">
+				<input type="number" name="contador" value="1"  min="1" max="500">
+				<input type="hidden" name="txtprecio" value="<?php echo $mostrar['precio'] ?>">
+				<br>
+				<br>
+				<input type="submit" value="Agregar" name="btnAgregar">
+			</form>
+		</td>
+		<!--<td><button  class="btn btn-success" data-toggle="modal" data-target="#ventanaModal"><i class="material-icons" style="font-size:36px;color:black">camera_alt</i></button></td>
+		<td><button onclick="location.href='./error.php'" type="button" class="btn btn-warning"><i class="material-icons" style="font-size:36px;color:black">local_grocery_store</i></button></td>
+		-->
 	</tr>
 <?php 
 }
@@ -75,7 +87,23 @@
 
 </div>
 </div>
-</div>			
+</div>		
+
+   <?php 
+     if (isset($_REQUEST["btnAgregar"])) {
+     	$img= $_REQUEST["txtimg"];
+     	$producto= $_REQUEST["txtproducto"];
+     	$cantidad= $_REQUEST["contador"];
+     	$precio=   $_REQUEST["txtprecio"];
+
+     	$_SESSION["carrito"][$producto]["img"]=$img;
+     	$_SESSION["carrito"][$producto]["cantidad"]=$cantidad;
+     	$_SESSION["carrito"][$producto]["precio"]=$precio;
+
+     	echo "<script>alert('$producto fue agregado con exito al carrito.');</script>";
+
+     }
+   ?>	
 <br>
 <br>
 <br>

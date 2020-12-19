@@ -15,6 +15,15 @@
             }
          }
 
+         public function nameUser($correo){
+            $email=$correo;
+            $sql="SELECT nombre FROM 'cliente' WHERE correo='$email'";
+            $db=new Database;
+            $conn=$db->connect();
+            $result=mysqli_query($conn,$sql);
+            return $result;
+         }
+
     }
 
     
