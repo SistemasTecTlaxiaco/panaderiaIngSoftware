@@ -72,7 +72,7 @@
 				<input type="hidden" name="txtprecio" value="<?php echo $mostrar['precio'] ?>">
 				<br>
 				<br>
-				<input type="submit" value="Agregar" name="btnAgregar">
+				<input type="submit" value="Agregar" name="btnAgregar" class="btn btn-warning">
 			</form>
 		</td>
 		<!--<td><button  class="btn btn-success" data-toggle="modal" data-target="#ventanaModal"><i class="material-icons" style="font-size:36px;color:black">camera_alt</i></button></td>
