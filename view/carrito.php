@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+
 include 'partials/header.php';
 ?>
 
@@ -8,27 +9,26 @@ include 'partials/header.php';
         <a href="home.php"><img id=logo1 src="../img/logo.png"></a>
           <form class="form-inline my-2 my-lg-0">
         </form>
-        <button class="btn btn-outline-primary"  onclick="location.href='./home.php'">Regresar atrás</button>
+       
 </nav>
 <br>
+<h3 align="center">Carrito de compras</h3>
 <hr>
-<br>
+
 <div class='container'>
 <div class="row">
 <div class="col-lg-12">
 
-
-<table class="table table-sm" border=2px>
-	<tr class="bg-warning">
-		<td align="center">Nombre</td>
-		<td  align="center">Imagen</td>
-		<td  align="center">Cantidad</td>
-		<td  align="center">Precio</td>
-	</tr>
+ <button class="btn btn-outline-primary"  onclick="location.href='product.php'">Más Productos<span class="glyphicon glyphicon-search"></span></button>
+ 
+<hr>
+<table class="table table-sm" border=0px>
 
 
 <?php
+
 if(isset($_SESSION["carrito"])){
+	$PagoTotal=0;
 foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 ?>
 	<tr>
@@ -43,13 +43,21 @@ foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 
 
 		<?php
+		}else if($key=="precio"){
+		$PagoTotal += $value * $arreglo["cantidad"];
+		?>
+
+			<td><?php echo "$ ".$value * $arreglo["cantidad"];?></td>
+		<?php
 		}else{
 		?>
 			<td><?php echo $value;?></td>
 		<?php
 		}
+
 		
 	}
+
 	?>
    </tr>
 
@@ -58,6 +66,9 @@ foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 ?>
 
 </table>
+
+<hr>
+<h3>Pago Total: <?php echo "   ".$PagoTotal; ?> <h3>
 
 <?php
 

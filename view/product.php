@@ -11,6 +11,8 @@
         </form>
         <button class="btn btn-outline-primary"  onclick="location.href='./home.php'">Regresar atrás</button>
 </nav>
+
+<!-- Ventana modal -->
 <div class="modal fade" id="ventanaModal" tabindex="-1" role="dialog" aris-labelledby="tituloVentana" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
@@ -32,13 +34,15 @@
 </div>
 </div>
 </div>
-
-
-
+<!-- Fin de la Ventana modal -->
+<h3 align="center">Productos</h3>
+<hr>
   	<div class='container'>
 		<div class="row">
 			<div class="col-lg-12">
-<br>
+
+ <button class="btn btn-outline-primary"  onclick="location.href='carrito.php'">Carrito</button>
+<hr>
 <table  class="table table-sm" border=2px>
 
 	<tr class="bg-warning">
@@ -96,9 +100,16 @@
      	$cantidad= $_REQUEST["contador"];
      	$precio=   $_REQUEST["txtprecio"];
 
-     	$_SESSION["carrito"][$producto]["img"]=$img;
+     	if(isset($_SESSION["carrito"][$producto])){
+        $_SESSION["carrito"][$producto]["img"]=$img;
+     	$_SESSION["carrito"][$producto]["cantidad"]+=$cantidad;
+     	$_SESSION["carrito"][$producto]["precio"]=$precio;
+
+     	}else{
+        $_SESSION["carrito"][$producto]["img"]=$img;
      	$_SESSION["carrito"][$producto]["cantidad"]=$cantidad;
      	$_SESSION["carrito"][$producto]["precio"]=$precio;
+     	}
 
      	echo "<script>alert('$producto fue agregado con exito al carrito.');</script>";
 
