@@ -1,6 +1,6 @@
  <?php 
  session_start();
-
+if(isset($_SESSION["datosUsuario"])){
 	require_once "../models/conexion.php";
 	require_once "../models/usuarioCrud.php";
  ?>
@@ -120,4 +120,8 @@
 <br>
 <br>
 <br>
-<?php include 'partials/footer.php';?>
+<?php include 'partials/footer.php';
+}else{
+   header('Location:../index.php');
+}
+?>

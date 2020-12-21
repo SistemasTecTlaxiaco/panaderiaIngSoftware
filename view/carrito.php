@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-
+if(isset($_SESSION["datosUsuario"])){
 include 'partials/header.php';
 ?>
 
@@ -24,7 +24,6 @@ include 'partials/header.php';
 <hr>
 <table class="table table-sm" border=0px>
 
-
 <?php
 
 if(isset($_SESSION["carrito"])){
@@ -32,31 +31,40 @@ if(isset($_SESSION["carrito"])){
 foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 ?>
 	<tr>
-		<td><?php echo $indice;?></td>
+	
 	
 
 	<?php
 	foreach ($arreglo as $key => $value) {
 		if($key=="img"){
 			?>
-			<td><?php echo "<img src='../img/imagen/".$value."' width='100' height='100'>";?></td>
-
+			<td align="center"><?php echo "<img src='../img/imagen/".$value."' width='100' height='100'>";?></td>
+				<td align="center"><?php echo $indice;?></td>
 
 		<?php
 		}else if($key=="precio"){
 		$PagoTotal += $value * $arreglo["cantidad"];
 		?>
 
-			<td><?php echo "$ ".$value * $arreglo["cantidad"];?></td>
+			<td align="center"><?php echo "$ ".$value * $arreglo["cantidad"];?></td>
 		<?php
 		}else{
 		?>
-			<td><?php echo $value;?></td>
+			<td align="center"><?php echo $value;?></td>
 		<?php
 		}
 
+
 		
 	}
+		?>
+		<td align="center">
+			<form action="" method="POST" >
+				<input type="hidden" name="arreglo" value="<?php echo $indice?>">
+				<input type="submit" value="Eliminar" name="btnEliminar" class="btn btn-danger">
+			</form>
+		</td>
+		<?php
 
 	?>
    </tr>
@@ -68,7 +76,13 @@ foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 </table>
 
 <hr>
-<h3>Pago Total: <?php echo "   ".$PagoTotal; ?> <h3>
+<h3>Pago Total: <?php echo " $ ".$PagoTotal; ?> <h3>
+<br>
+	<form action="" method="POST" >
+				<input type="hidden" name="arreglo" value="<?php echo $indice?>">
+				<input type="submit" value="Continuar con la compra" name="btnComprar" class="btn btn-success">
+			</form>
+
 
 <?php
 
@@ -86,4 +100,20 @@ foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 </div>
 </div>
 
-<?php include 'partials/footer.php';?>
+
+  <?php 
+     if (isset($_REQUEST["btnEliminar"])) {
+     	$deli=$_REQUEST["arreglo"];
+     	
+ 		unset($_SESSION["carrito"][$deli]);
+     	echo "<script>alert('$Producto Eliminado.');</script>";
+     	header('Location: carrito.php');
+
+     }
+   ?>	
+
+   <?php include 'partials/footer.php';
+}else{
+   header('Location:../index.php');
+}
+?>

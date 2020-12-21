@@ -1,5 +1,9 @@
 
-<?php include 'partials/header.php' ?>
+<?php 
+session_start();
+if(isset($_SESSION["datosUsuario"])){
+
+include 'partials/header.php' ?>
 <nav class="navbar navbar-light" he  style="background-color: #EEEB2B">
         <a href="home.php"><img id=logo1 src="../img/logo.png"></a>
           <form class="form-inline my-2 my-lg-0">
@@ -26,4 +30,9 @@
  
         </div>
 
-<?php include 'partials/footer.php'; ?>
+<?php include 'partials/footer.php'; 
+
+}else{
+   header('Location:../index.php');
+}
+?>

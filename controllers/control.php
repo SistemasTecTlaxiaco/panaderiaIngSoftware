@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 
 require_once "models/conexion.php";
 if(isset($_POST['submit'])){
@@ -18,6 +18,17 @@ if(isset($_POST['submit'])){
         $user = new User;
         if($user->datosLogin($datos))
         {
+
+        foreach ($_SESSION["datosUsuario"] as $key => $value) {
+            if($key=="nombre"){
+                $nom=$value;
+            }elseif ($key=="ape_pater") {
+                $ap=$value;
+            }elseif ($key=="ape_mater") {
+                $am=$value;
+            }
+        }
+        $_SESSION["nombre"]=$nom." ".$ap." ".$am;
           header('Location:view/home.php');
         }else
         {

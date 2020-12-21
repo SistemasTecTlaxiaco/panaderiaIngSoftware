@@ -13,19 +13,14 @@ include 'controllers/control.php';
   <body>
   <nav class="navbar navbar-light" he  style="background-color: #EEEB2B">
         <a href="index.php"><img id=logo1 src="img/logo.png"></a>
-        <form class="form-inline my-2 my-lg-0">
-
-        </form>
-        <button class="btn btn-outline-primary"  onclick="location.href='view/registroCliente.php'">Crear Cuenta </button>
-    
   </nav>
 <div class="modal-dialog text-center">
   <div class="col-sm-10">
     <div class="modal-content" id="der">
-        <br>
-        <br>
-        <br> 
-      <p> Inicio de sesión </p>
+       <br> 
+       <br> 
+      <h4> Inicio de sesión </h4>
+      <hr>
       <div class="col-12">
         <img id="logo" src="img/ini.png">
         <h1> Beth-el </h1>
@@ -37,8 +32,15 @@ include 'controllers/control.php';
           <div class="form-group">
             <input type="password" name="password" class="form-control" placeholder="Contraseña">
           </div>
-          <button class="btn btn-primary" name="submit" type="submit">Siguiente </button>
-          <br><br>
+          <div>
+            <div>
+               <button class="btn btn-primary" name="submit" type="submit">Siguiente </button>
+            </div>
+              <a  href="view/registroCliente.php">Crear cuenta</a>
+          </div>
+         
+          <br>
+        
       </form>
     </div>
   
