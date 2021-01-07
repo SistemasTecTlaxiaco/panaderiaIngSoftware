@@ -1,4 +1,4 @@
- <?php 
+  <?php 
  session_start();
 if(isset($_SESSION["datosUsuario"])){
 	require_once "../models/conexion.php";
@@ -112,6 +112,7 @@ if(isset($_SESSION["datosUsuario"])){
      	}
 
      	echo "<script>alert('$producto fue agregado con exito al carrito.');</script>";
+ 
 
      }
    ?>	

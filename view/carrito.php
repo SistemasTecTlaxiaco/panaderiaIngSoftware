@@ -31,9 +31,6 @@ if(isset($_SESSION["carrito"])){
 foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 ?>
 	<tr>
-	
-	
-
 	<?php
 	foreach ($arreglo as $key => $value) {
 		if($key=="img"){
@@ -74,7 +71,7 @@ foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 ?>
 
 </table>
-
+i
 <hr>
 <h3>Pago Total: <?php echo " $ ".$PagoTotal; ?> <h3>
 <br>
@@ -85,11 +82,15 @@ foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 
 
 <?php
-
+if($PagoTotal==0){
+	unset($_SESSION["carrito"]);
+	header('Location: carrito.php');
+}
 
 }else{
 	echo "<script>alert('El carrito esta vacio');</script>";
 	?>
+	<h5 align="center">Carrito de compra vacio</h5>
 	<a href="product.php">Regresar</a>
 
 	<?php

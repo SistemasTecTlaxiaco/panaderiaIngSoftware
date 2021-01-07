@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
     class User{
 
         public function datosLogin($datos){
@@ -9,6 +9,7 @@ session_start();
             $result=mysqli_query($conn,$sql);
             $row_cnt = mysqli_num_rows($result);
             if($row_cnt>0){
+                session_start();
                 $satos=$result->fetch_assoc();
                 $_SESSION["datosUsuario"]=$satos;
                  return true;

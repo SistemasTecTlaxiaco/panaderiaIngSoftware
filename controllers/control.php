@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
         $user = new User;
         if($user->datosLogin($datos))
         {
-
+//Agrear los datos a la sesion 
         foreach ($_SESSION["datosUsuario"] as $key => $value) {
             if($key=="nombre"){
                 $nom=$value;
@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
           header('Location:view/home.php');
         }else
         {
-         echo '<div class="alert alert-danger">Usuario no existe</div>';
+         echo '<script type="text/javascript"> alertify.success("Mensaje de exito");</script>';
         }
     }
 
