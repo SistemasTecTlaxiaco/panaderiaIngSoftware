@@ -37,6 +37,9 @@ include 'controllers/control.php';
                <button class="btn btn-primary" name="submit" type="submit">Siguiente </button>
             </div>
               <a  href="view/registroCliente.php">Crear cuenta</a>
+            <div align="left">
+               <a  href="view/resPass.php">¿Has olvidado tu contraseña?</a>
+            </div>
           </div>
          
           <br>

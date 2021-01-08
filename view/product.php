@@ -7,9 +7,17 @@ if(isset($_SESSION["datosUsuario"])){
  <?php include 'partials/header.php' ?>
 <nav class="navbar navbar-light" he  style="background-color: #EEEB2B">
         <a href="home.php"><img id=logo1 src="../img/logo.png"></a>
-          <form class="form-inline my-2 my-lg-0">
-        </form>
-        <button class="btn btn-outline-primary"  onclick="location.href='./home.php'">Regresar atrás</button>
+        <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <h5> <?php echo $_SESSION["nombre"];?></h5>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Mis Datos</a>
+          <a class="dropdown-item" href="#">Carrito</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../controllers/close.php">Cerrar Sesión</a>
+        </div>
+      </li>
 </nav>
 
 <!-- Ventana modal -->
@@ -65,8 +73,8 @@ if(isset($_SESSION["datosUsuario"])){
 		<td align="center"><?php echo $mostrar['id'] ?></td>
 		<td align="center"><?php echo $mostrar['codigo'] ?></td>
 		<td align="center"><?php echo $mostrar['nombre_producto'] ?></td>
-		<td><?php echo 'Precio: $ '.$mostrar['precio']."<br>Descripcion: ".$mostrar['descripcion']."<br>Tamaño: ".$mostrar['tamano'] ?></td>
-		<td align="center"><?php echo "<img src='../img/imagen/".$mostrar['imagen']."' width='100' height='100'>" ?></td>
+		<td><?php echo '<h5>Precio: $ '.$mostrar['precio']."</h5> Descripcion: ".$mostrar['descripcion']."<br>Tamaño: ".$mostrar['tamano'] ?></td>
+		<td align="center"><?php echo "<img src='../img/imagen/".$mostrar['imagen']."' width='200' height='200'>" ?></td>
 
 		<td align="center">
 			<form action="" method="POST">

@@ -1,15 +1,15 @@
 <?php 
 
     class User{
-
+         
         public function datosLogin($datos){
-            $sql="SELECT * FROM cliente WHERE correo='$datos[0]' AND clave='$datos[1]'";
+            $sql="SELECT * FROM cliente WHERE correo='$datos[0]'";
             $db=new Database;
             $conn=$db->connect();
             $result=mysqli_query($conn,$sql);
             $row_cnt = mysqli_num_rows($result);
             if($row_cnt>0){
-                session_start();
+               
                 $satos=$result->fetch_assoc();
                 $_SESSION["datosUsuario"]=$satos;
                  return true;
@@ -27,6 +27,10 @@
             return $result;
          }
 
-    }
+         
+}
+
+    
+
 
     

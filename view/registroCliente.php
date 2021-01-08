@@ -53,12 +53,7 @@ include 'partials/header.php'
                                 <input  name="email" type="email" placeholder="ejemplo17@gmail.com" class="form-control">
                             </div>
                         </div>
-                      <!--  <div class="form-group">
-                            <div class="col-md-8">
-                                <label>Nombre de usuario:</label>
-                                <input  name="user" type="text" placeholder="Scott900" class="form-control">
-                            </div>
-                        </div>-->
+               
                         <div class="form-group">
                             <div class="col-md-8">
                                 <label>Contraseña:</label>
