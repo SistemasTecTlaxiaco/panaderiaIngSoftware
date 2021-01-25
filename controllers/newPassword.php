@@ -17,7 +17,8 @@ if(isset($_POST['submit'])){
             $ide=$_SESSION['identyf'];
             require '../models/usuarioCrud.php';
             $obj = new metodos;
-            if ($obj->actualizarPass($ide,$passw)) {
+            $result=$obj->actualizarPass($ide,$passw);
+            if ($result) {
                 header('Location:../index.php'); 
             }else{
                 echo "<script>alert('Error en la consulta');</script>";

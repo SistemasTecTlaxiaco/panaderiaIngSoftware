@@ -113,8 +113,8 @@
     function actualizarPass($ide,$pass){
          $db=new Database;
          $conn=$db->connect();
-         $sqlv="UPDATE cliente SET clave = $pass WHERE id= $ide"; 
-         $result=mysqli_query($conn,$sqlv);
+         $sql = "UPDATE cliente SET clave = '$pass' WHERE id= $ide"; 
+         $result=mysqli_query($conn,$sql);
          return $result;
     }
 
