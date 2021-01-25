@@ -26,10 +26,13 @@ if(isset($_POST['submit'])){
                 $am=$value;
             }elseif ($key=="clave") {
                 $password1=$value;
+            }elseif ($key=="id") {
+                $id=$value;
             }
         }
         if(password_verify($password, $password1)){
             $_SESSION["nombre"]=$nom." ".$ap." ".$am;
+            $_SESSION["id"]=$id;
           header('Location:view/home.php'); 
         }else{
             session_destroy();

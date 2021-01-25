@@ -7,6 +7,12 @@ if(isset($_SESSION["datosUsuario"])){
  <?php include 'partials/header.php' ?>
 <nav class="navbar navbar-light" he  style="background-color: #EEEB2B">
         <a href="home.php"><img id=logo1 src="../img/logo.png"></a>
+        <div class="navbar">
+        <h3><a class="navbar-brand" href="home.php">Inicio</a></h3>
+        <h3><a class="navbar-brand" href="product.php">Productos</a></h3>
+        <h3><a class="navbar-brand" href="informacion.php">Sobre Nosotros</a></h3>
+        </div>
+
         <li class="nav-item dropdown">
          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            <h5> <?php echo $_SESSION["nombre"];?></h5>
@@ -19,6 +25,7 @@ if(isset($_SESSION["datosUsuario"])){
         </div>
       </li>
 </nav>
+
 
 <!-- Ventana modal -->
 <div class="modal fade" id="ventanaModal" tabindex="-1" role="dialog" aris-labelledby="tituloVentana" aria-hidden="true">

@@ -21,6 +21,7 @@ if(isset($_SESSION["datosUsuario"])){
       </li>
 </nav>
 
+
 <div class="modal-dialog text-center">
   <div class="col-sm-16">
     <div class="modal-content">

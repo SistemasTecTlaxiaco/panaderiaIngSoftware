@@ -7,6 +7,12 @@ include 'partials/header.php';
 
 <nav class="navbar navbar-light" he  style="background-color: #EEEB2B">
         <a href="home.php"><img id=logo1 src="../img/logo.png"></a>
+        <div class="navbar">
+        <h3><a class="navbar-brand" href="home.php">Inicio</a></h3>
+        <h3><a class="navbar-brand" href="product.php">Productos</a></h3>
+        <h3><a class="navbar-brand" href="informacion.php">Sobre Nosotros</a></h3>
+        </div>
+
         <li class="nav-item dropdown">
          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            <h5> <?php echo $_SESSION["nombre"];?></h5>
@@ -79,7 +85,6 @@ foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 ?>
 
 </table>
-i
 <hr>
 <h3>Pago Total: <?php echo " $ ".$PagoTotal; ?> <h3>
 <br>
@@ -121,7 +126,7 @@ if($PagoTotal==0){
      }
    ?>	
 
-   <?php include 'partials/footer.php';
+<?php include 'partials/footer.php';
 }else{
    header('Location:../index.php');
 }

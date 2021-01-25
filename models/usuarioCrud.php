@@ -51,6 +51,21 @@
          return $result;
 
     }
+    function generarCodigo($longitud) {
+    $key = '';
+    $pattern = '1234567890';
+    $max = strlen($pattern)-1;
+    for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
+    return $key;
+    }  
+
+    function inserToken($token, $ident){
+         $db=new Database;
+         $conn=$db->connect();
+         $sql="UPDATE cliente SET token = $token WHERE id= $ident";
+         $result=mysqli_query($conn,$sql);
+         return $result;
+    }
 
 	}
 

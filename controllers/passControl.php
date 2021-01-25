@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
 
     if(empty($email))
     {
-        echo "<script>alert('Campo vacio, introduce una correo electronico.');</script>";
+        echo "<script>alert('Campo vacio, introduce una cuenta de correo.');</script>";
         //echo '<div class="alert alert-danger">Intro</div>';
     }else
     {
@@ -17,11 +17,17 @@ if(isset($_POST['submit'])){
           $obj = new metodos;
     if($obj->existeEmail($datos3))
        {
-           echo "<script>alert('El correo si existe');</script>";
+           $token = $obj->generarCodigo(6);
            
+           if ($obj->inserToken($token, $ident)) {
+              echo "<script>alert('El correo si existe');</script>".$token;
+           }else{
+              "<script>alert('ERROR--> CONSULTA');</script>";
+
+           }
 
        }else{
-          echo "<script>alert('Correo electronico incorrecto');</script>";
+          echo "<script>alert('Correo electronico es incorrecto');</script>";
 
        }
 

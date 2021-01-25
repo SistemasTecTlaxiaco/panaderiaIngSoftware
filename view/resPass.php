@@ -31,6 +31,8 @@ include '../controllers/passControl.php';
             <div>
                <button class="btn btn-primary" name="submit" type="submit">Siguiente </button>
             </div>
+            <br>
+            <a  href="../index.php">Iniciar sesión con mi cuenta </a>
           </div>
          
           <br>
