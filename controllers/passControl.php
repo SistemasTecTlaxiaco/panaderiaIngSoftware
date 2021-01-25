@@ -30,6 +30,7 @@ if(isset($_POST['submit'])){
             $produto=new mail;
             $resulta=$produto->datos($email,$token);
             if ($resulta) {
+               $_SESSION["identyf"]=$identy;
                header('Location:../view/veryPass01.php'); 
             }
 

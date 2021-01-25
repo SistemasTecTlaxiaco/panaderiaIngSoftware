@@ -1,5 +1,5 @@
 <?php
-include '../controllers/passAcceso.php';
+include '../controllers/newPassword.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,12 +23,11 @@ include '../controllers/passAcceso.php';
       </div> 
       <h4> Recuperación de la cuenta</h4>
       <form class="col-12" action="" method="POST">
-      	<p>Introduzca el codigo de verificacion. </p>
+      	<p>Introduzca su nueva contraseña. </p>
           <div class="form-group">
             <input type="Password" name="Password"  class="form-control" placeholder="Nueva Contraseña" require>
-          </div>
-         <div class="form-group">
-            <input type="Password" name="Password1"  class="form-control" placeholder="Repetir contraseña" require>
+         <br>
+            <input type="Password" name="Password01"  class="form-control" placeholder="Repetir contraseña" require>
           </div>
           <div>
             <div>
