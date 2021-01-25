@@ -10,5 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/style1.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
+    <link rel="stylesheet" type="text/css" href="../alertifyjs/css/alertify.css">
+	<link rel="stylesheet" type="text/css" href="../alertifyjs/css/themes/default.css">
 </head>
 <body>

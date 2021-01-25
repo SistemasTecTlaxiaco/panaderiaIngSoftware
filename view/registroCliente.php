@@ -16,8 +16,13 @@ include 'partials/header.php'
             <div class="well well-sm">
                 <form class="form-horizontal" method="POST" >
                     <fieldset>
-                        <legend class=" header">Registro de Usuario</legend>
+                    <div align="right">
+                       <a href="../index.php">Prefiero iniciar sesión</a> 
+                    </div>
+                     
+                        <h3 align="center">Registro de usuarios</h3>
 
+<hr>
                         <div class="form-group">
                             <div class="col-md-8">
                                 <label>Nombre:</label>
@@ -48,12 +53,7 @@ include 'partials/header.php'
                                 <input  name="email" type="email" placeholder="ejemplo17@gmail.com" class="form-control">
                             </div>
                         </div>
-                      <!--  <div class="form-group">
-                            <div class="col-md-8">
-                                <label>Nombre de usuario:</label>
-                                <input  name="user" type="text" placeholder="Scott900" class="form-control">
-                            </div>
-                        </div>-->
+               
                         <div class="form-group">
                             <div class="col-md-8">
                                 <label>Contraseña:</label>

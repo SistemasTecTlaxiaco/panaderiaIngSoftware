@@ -7,6 +7,7 @@ if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $pass = $_POST['password'];
     $passR = $_POST['passwordR'];
+    $minimo=8;
 
     if(empty($nombre) || 
         empty($aPaterno) || 
@@ -16,17 +17,18 @@ if(isset($_POST['submit'])){
         empty($passR))
         {
         echo '<div class="alert alert-danger"> Rellene todos los campos  </div>';
-   }else
-   { 
+   }else { 
+       if($pass==$passR){
+        if(strlen($pass)>=$minimo){
+      $password =password_hash($pass, PASSWORD_DEFAULT, ['cost' => 10]);
       $datos=array($nombre,
                    $aPaterno,
                    $aMaterno,
                    $email,
-                   $pass,
-                   $passR
+                   $password,
+                   $password
                 );
       $datos1=array($email);
-       if($pass==$passR){
           require '../models/usuarioCrud.php';
           $obj = new metodos;
        if($obj->existeEmail($datos1))
@@ -48,7 +50,10 @@ if(isset($_POST['submit'])){
          //   }
           
        }
-         } else{
+        }else{
+          echo "<script>alert('La contraseña debe tener minimo 8 caracteres');</script>";
+        } 
+        } else{
             echo '<div class="alert alert-danger"> Las contraseñas no son iguales </div>';
          }   
     }
