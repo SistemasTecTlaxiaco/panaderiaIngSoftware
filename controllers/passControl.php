@@ -18,13 +18,20 @@ if(isset($_POST['submit'])){
     if($obj->existeEmail($datos3))
        {
            $token = $obj->generarCodigo(6);
-           
-           if ($obj->inserToken($token, $ident)) {
-              echo "<script>alert('El correo si existe');</script>".$token;
-           }else{
-              "<script>alert('ERROR--> CONSULTA');</script>";
-
+           require_once "../models/usuarioCrud.php";
+           $produt=new metodos;
+           $result=$produt->saberIde($email);
+           while ($ide=mysqli_fetch_array($result)) {
+             $identy=$ide['id'];
            }
+           if ($obj->inserToken($token, $identy)) 
+           {
+            require_once "../models/mail.php";
+            $produto=new mail;
+            $resulta=$produto->datos($email,$token);
+            if ($resulta) {
+               header('Location:../view/veryPass01.php'); 
+            }
 
        }else{
           echo "<script>alert('Correo electronico es incorrecto');</script>";
@@ -33,4 +40,5 @@ if(isset($_POST['submit'])){
 
     }
 
+}
 }

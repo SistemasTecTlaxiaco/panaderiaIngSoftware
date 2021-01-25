@@ -9,7 +9,6 @@
             $result=mysqli_query($conn,$sql);
             $row_cnt = mysqli_num_rows($result);
             if($row_cnt>0){
-               
                 $satos=$result->fetch_assoc();
                 $_SESSION["datosUsuario"]=$satos;
                  return true;
@@ -24,6 +23,7 @@
             $db=new Database;
             $conn=$db->connect();
             $result=mysqli_query($conn,$sql);
+            
             return $result;
          }
 

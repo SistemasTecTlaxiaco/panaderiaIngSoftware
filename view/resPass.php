@@ -23,7 +23,7 @@ include '../controllers/passControl.php';
       </div> 
       <h4> Recuperación de la cuenta</h4>
       <form class="col-12" action="" method="POST">
-      	<p>Introduce tu dirección de correo electrónico para recuperación de la cuenta. </p>
+      	<p>Introduce el correo electronico de tu cuenta para restablecer la contraseña. </p>
           <div class="form-group">
             <input type="email" name="email"  class="form-control" placeholder="Correo Electrónico" require>
           </div>
@@ -36,12 +36,13 @@ include '../controllers/passControl.php';
           </div>
          
           <br>
-        
+          <br>
+            <br>
+              <br>
       </form>
     </div>
   
   </div>
 
 </div>
-  </body>
-</html>
+<?php include 'partials/footer.php'; ?>

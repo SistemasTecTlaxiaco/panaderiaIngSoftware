@@ -70,6 +70,7 @@ foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 	}
 		?>
 		<td align="center">
+
 			<form action="" method="POST" >
 				<input type="hidden" name="arreglo" value="<?php echo $indice?>">
 				<input type="submit" value="Eliminar" name="btnEliminar" class="btn btn-danger">
@@ -88,10 +89,10 @@ foreach ($_SESSION["carrito"] as $indice => $arreglo) {
 <hr>
 <h3>Pago Total: <?php echo " $ ".$PagoTotal; ?> <h3>
 <br>
-	<form action="" method="POST" >
+	<form action="../controllers/compra.php" method="POST" >
 				<input type="hidden" name="arreglo" value="<?php echo $indice?>">
-				<input type="submit" value="Continuar con la compra" name="btnComprar" class="btn btn-success">
-			</form>
+				<button class="btn btn-success" name="submit" type="submit">Continuar con la compra </button>
+	</form>
 
 
 <?php

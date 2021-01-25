@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 require_once "models/conexion.php";
 if(isset($_POST['submit'])){
     $username = $_POST['username'];

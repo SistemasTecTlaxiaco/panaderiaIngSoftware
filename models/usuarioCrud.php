@@ -53,22 +53,62 @@
     }
     function generarCodigo($longitud) {
     $key = '';
-    $pattern = '1234567890';
+    $pattern = '123456789';
     $max = strlen($pattern)-1;
     for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
     return $key;
     }  
 
-    function inserToken($token, $ident){
+  function inserToken($token, $ide){
          $db=new Database;
          $conn=$db->connect();
-         $sql="UPDATE cliente SET token = $token WHERE id= $ident";
-         $result=mysqli_query($conn,$sql);
+         $sqlv="UPDATE cliente SET token = $token WHERE id= $ide"; 
+         $result=mysqli_query($conn,$sqlv);
          return $result;
+
     }
 
-	}
+	
 
 
+    //SI EXISTE LA DIRECCION;
 
+    function direccionExiste(){
+    $sql="SELECT * FROM cliente WHERE correo='$datos[0]'";
+            $db=new Database;
+            $conn=$db->connect();
+            $result=mysqli_query($conn,$sql);
+            $row_cnt = mysqli_num_rows($result);
+            if($row_cnt>0){
+                 return true;
+            }else{
+                 return false;        
+            }
+    }
+
+    function saberIde($correo){
+        $sql="SELECT id FROM cliente WHERE correo='$correo'";
+        $db=new Database;
+        $conn=$db->connect();
+        $result=mysqli_query($conn,$sql);
+         return $result;
+
+    }
+
+
+    function existeToken($token){
+    $sql="SELECT * FROM cliente WHERE token=$token";
+            $db=new Database;
+            $conn=$db->connect();
+            $result=mysqli_query($conn,$sql);
+            $row_cnt = mysqli_num_rows($result);
+            if($row_cnt>0){
+                 return true;
+            }else{
+                 return false;        
+            }
+    }
+
+
+}
  ?>
