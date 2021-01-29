@@ -63,3 +63,31 @@
   </form>
 </div>
 <div>
+<form class="upproducto" id="upproducto" name="upproducto" action="POST" enctype="multipart/form-data">
+    <div class="modal fade " id="updatep" name="updatep" tabindex="-1" role="dialog" aria-labelledby="modalPasswordLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content ">
+          <div class="modal-header">
+          <strong data-name="" style="color:#000000">Actualizar Producto</strong> 
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <br>
+          <div class="modal-body">
+              <div id="resp_alert2" align="center"></div>
+              <div class="row">
+              <div class="col-md-5 mb-3">
+              <div class="form-group has-feedback">
+                <div class="previmage">
+                 <img id="previmg" src=""> 
+                </div>
+             </div>
+            </div>
+            <div class="col-md-7">
+              <div class="form-group has-feedback">
+              <input type="text" readonly name="codigo2" id="codigo2" class="form-control" autofocus placeholder="Código del producto" required autocomplete="off" title="Código del producto" minlength="8" maxlength="50"><span class="help-block"></span></div>
+              <div class="form-group has-feedback">
+              <input type="text" name="nombre2" id="nombre2" class="form-control" autofocus placeholder="Nombre del producto" required autocomplete="off" title=" Minimo 6, Maximo 50" minlength="6" maxlength="500"><span class="help-block"></span></div>
+
+             <div class="form-group has-feedback">
+               <input type="number" name="precio2" id="precio2" class="form-control" min="1" max="20" autofocus placeholder="Precio" required autocomplete="off" title="1 Minimo , Maximo 50">
+               <span class="help-block"></span></div>
