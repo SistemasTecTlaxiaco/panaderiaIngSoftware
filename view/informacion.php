@@ -18,7 +18,7 @@ include 'partials/header.php' ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Mis Datos</a>
-          <a class="dropdown-item" href="#">Carrito</a>
+          <a class="dropdown-item" href="carrito.php">Carrito</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="../controllers/close.php">Cerrar Sesión</a>
         </div>
