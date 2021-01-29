@@ -113,3 +113,14 @@
             <div class="col-md-2 mb-2">
             </div>
           </div>
+          
+          <div class="modal-footer" align="center">
+            <button type="submit" class="btn btn-success" id="btnup">Aceptar</button>
+            <button type="submit" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div>
