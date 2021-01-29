@@ -68,7 +68,10 @@ include 'partials/header.php'
                         </div>
                         <div class="form-group">
                             <div class="col-md-12 ">
-                                <button type="submit" name="submit"class="btn btn-primary btn-lg">Crear Cuenta</button>
+                                <form method="POST">
+
+                                    <button type="submit" name="submit"class="btn btn-primary btn-lg">Crear Cuenta</button>
+                                </form>
                             </div>
                         </div>
                     </fieldset>
