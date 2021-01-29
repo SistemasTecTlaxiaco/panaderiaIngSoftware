@@ -138,3 +138,15 @@
           <div class="modal-body">
             <div id="resp_alert3" align="center"></div>
             <strong data-name=""> ¿Está seguro de eliminar el producto?</strong>
+            </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success" id="Elibtn">Aceptar</button>
+            <button type="submit" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
