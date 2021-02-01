@@ -76,4 +76,29 @@
     <div class="col-sm-offset-1 col-sm-8" >
         <h3 class="text-center"> <small class="mensaje"></small></h3>
       </div>
+      <div class="table-responsive col-sm-12">    
+        <table id="listpedido" class="table table-bordered table-hover " cellspacing="0" width="100%">
+          <thead class="bg-light text-dark" >
+            <tr>                
+            
+                            <th>Nombre Cliente</th> 
+                            <th>Pedido</th>
+                            <th>Tamaño</th> 
+                            <th>Cantidad</th> 
+                            <th>Total $</th>
+                            <th>Telefono</th>
+                            <th>Opción</th>
+           
+                                  
+            </tr>
+          </thead>          
+        </table>
+      </div>      
+    </div>    
+    </div>
+  </article>
+</div>
+</div>
+</div>  
+ </div>
  
