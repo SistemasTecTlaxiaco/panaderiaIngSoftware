@@ -5,6 +5,7 @@ $(document).on("ready", function(){
 
 function actualizar(){
     listar();
+    listardos();
 }
 var listar= function(){
     var table= $("#productoadd").DataTable({
