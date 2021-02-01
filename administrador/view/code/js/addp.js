@@ -172,6 +172,7 @@ var data_form= new FormData($('#addproducto')[0]);
         $("#foto").val('');
         $('input').val("");
         $('select').val("");
+        $('textarea').val("");
 
         listar();
         return false;
@@ -183,6 +184,85 @@ var data_form= new FormData($('#addproducto')[0]);
     })
     return false;
 });
+
+
+var listardos= function(){
+    var table= $("#listpedido").DataTable({
+        "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+    },"destroy":true,
+        "ajax":{
+            "url":"controllers/controlpedido.php"
+        },
+        "columns":[
+            {"data" : "cliente"},
+            {"data" : "producto"},
+            {"data" : "tamano"},
+            {"data" : "cantidad"},
+            {"data" : "total"},
+            {"data" : "telefono"},
+        {"defaultContent":"<button type='button' class='eliminarpedido btn btn-warning' style='width:100%; height:30px' data-toggle='modal' data-target='#modaleliminarpedido' ><i class='fa fa-ban'></i></button>"}
+        ]
+    });
+    eliminarpedido("#listpedido tbody", table);
+}
+
+var eliminarpedido= function(tbody,table){
+    $(tbody).on("click","button.eliminarpedido", function () {
+        var data = table.row( $(this).parents("tr")).data();
+        var eliminarp=$(".EliminarPedido #eliminarpedido").val(data.id);
+    });
+}
+
+$(document).on("submit", ".EliminarPedido", function(event){
+    event.preventDefault();
+    var $form = $(this);
+  
+    var data_form = {
+        eliminarpedido: $("#eliminarpedido",$form).val()
+        
+         }
+         if(data_form == null || data_form.eliminar == ''){
+            warningalert("Error!!!",3);
+            return false;        
+        }
+    var url_php = 'controllers/pedidocontrol.php';
+    $.ajax({
+        type:'POST',
+        url: url_php,
+        data: data_form,
+        dataType: 'json',
+        async: true,
+    })
+    .done(function ajaxDone(res){ 
+       if(res.full == false){
+           dangeralert(res.mensaje,3)
+            return false;
+       } 
+    if(res.full== true){
+        successalert(res.mensaje,3)
+        $("#modaleliminarpedido .close").click();
+        listardos();
+        return false;
+   } 
+    })
+    .fail(function ajaxError(e){
+    })
+    .always(function ajaxSiempre(){
+    })
+    return false;
+});
+
+$("#LP2").click(function () {
+            $("#contenidoproducto").hide();
+            $("#contenidopedido").show();
+            });
+$("#LP1").click(function () {
+            $("#contenidopedido").hide();
+            $("#contenidoproducto").show();
+            });
+
+
 
 
 function warningalert(warning, dat) {
