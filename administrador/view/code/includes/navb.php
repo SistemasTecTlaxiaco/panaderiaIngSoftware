@@ -13,3 +13,11 @@
     </div>
   </div>
 </nav>
+<style>
+#logo1
+{
+    width: 110px;
+    height: 130px;
+}
+
+</style>
