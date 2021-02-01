@@ -25,7 +25,6 @@
 </div>
 </div>
             </div>
-            
             <div class="col-md-7">
               <div class="form-group has-feedback">
 
@@ -150,3 +149,19 @@
     </div>
   </form>
 </div>
+<div>
+  <form class="EliminarPedido" action="POST">
+    <input type="hidden" id="eliminarpedido" name="eliminarpedido" value="0">
+    <div class="modal fade" id="modaleliminarpedido" tabindex="-1" role="dialog" aria-labelledby="modalEliminarLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="card">
+              <h4 align="left" class="modal-title" id="modalEliminarLabel"><b>Cancelar Pedido</b></h4>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div id="resp_alert3" align="center"></div>
+            <strong data-name=""> ¿Está seguro de cancelar el pedido?</strong>
+          </div>
