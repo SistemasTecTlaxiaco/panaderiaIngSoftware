@@ -1,5 +1,6 @@
 $(document).on("ready", function(){
     listar();
+    listardos();
 });
 
 function actualizar(){
