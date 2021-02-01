@@ -165,3 +165,14 @@
             <div id="resp_alert3" align="center"></div>
             <strong data-name=""> ¿Está seguro de cancelar el pedido?</strong>
           </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success" id="Elibtn1">Aceptar</button>
+            <button type="submit" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
