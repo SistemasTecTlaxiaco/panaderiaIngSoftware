@@ -7,8 +7,9 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="javascript:location.reload()">Inicio <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#add">Agregar Producto</a>
-      <a class="nav-item nav-link" href="#" onclick="actualizar();">Lista de Productos</a>
+    <!--  <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#add">Agregar Producto</a> -->
+    <a class="nav-item nav-link" href="#" id="LP1" onclick="actualizar();">Lista de Productos</a>
+      <a class="nav-item nav-link" href="#" id="LP2" onclick="actualizar();">Lista de Pedidos</a>
     </div>
   </div>
 </nav>
