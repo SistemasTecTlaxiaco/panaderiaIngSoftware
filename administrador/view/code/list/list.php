@@ -1,3 +1,4 @@
+<div id="contenidoproducto">
 <div class="container mt-5" align="center">
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
