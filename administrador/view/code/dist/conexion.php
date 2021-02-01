@@ -1,10 +1,10 @@
 <?php
     date_default_timezone_set('GMT');
     date_default_timezone_set('America/Mexico_City');
-    $host="localhost";
-        $user="root";
-        $pass="";
-        $name="panaderia"; 
+    $host="us-cdbr-east-06.cleardb.net";
+        $user="b9465cd869f344";
+        $pass="f9a1128f";
+        $name="heroku_0fdf25b1a9c4364"; 
     $connect=@new mysqli($host,$user,$pass,$name);
     if ($connect->connect_errno){
         ?>
